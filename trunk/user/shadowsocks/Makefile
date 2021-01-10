@@ -117,3 +117,7 @@ endif
 ifeq ($(CONFIG_FIRMWARE_INCLUDE_SSSERVER),y)
 	$(ROMFSINST) -p +x $(THISDIR)/$(SRC_SS_NAME)/src/ss-server /usr/bin/ss-server
 endif
+ifeq ($(CONFIG_FIRMWARE_INCLUDE_V2RAY_PLUGIN),y)
+	$(ROMFSINST) $(THISDIR)/v2ray-plugin/ /usr/local/
+	$(ROMFSINST) -p +x $(THISDIR)/v2ray-plugin/v2ray-plugin /usr/local/v2ray-plugin
+endif
